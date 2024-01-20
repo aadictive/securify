@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Securify: Password Perfection in One Tap.
-          Welcome!!
+          Welcome!!!!
         </p>
       </header>
     </div>
