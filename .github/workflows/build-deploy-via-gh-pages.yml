@@ -49,4 +49,4 @@ jobs:
             path: ./build
     
         - name: Push Build to gh-pages
-          run: gh-pages -d build
+          run: npm run deploy
