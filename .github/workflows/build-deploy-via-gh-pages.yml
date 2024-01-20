@@ -1,4 +1,4 @@
-name: Build, Deploy to gh-pages
+name: Build and push to gh-pages branch
 
 on:
   push:
@@ -55,7 +55,7 @@ jobs:
           uses: s0/git-publish-subdir-action@develop
           env:
             REPO: self
-            BRANCH: build-trial # The branch name where you want to push the assets
-            FOLDER: build # The directory where your assets are generated
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-            MESSAGE: "Auto-Build: ${{ env.TIMESTAMP }} ET" # The commit message
+            BRANCH: gh-pages # Branch to push
+            FOLDER: build
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            MESSAGE: "Auto-Build: ${{ env.TIMESTAMP }} ET"
