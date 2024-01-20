@@ -47,6 +47,9 @@ jobs:
           with:
             name: production-files
             path: ./build
+        
+        - name: Set current date and time as env variable
+          run: echo "TIMESTAMP=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV    
     
         - name: Push
           uses: s0/git-publish-subdir-action@develop
@@ -55,4 +58,5 @@ jobs:
             BRANCH: build-trial # The branch name where you want to push the assets
             FOLDER: build # The directory where your assets are generated
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-            MESSAGE: "Build: ({sha}) {msg}" # The commit message
+            MESSAGE: "Build: $TIMESTAMP" # The commit message
+            COMMIT_NAME: "gh-pages-build-push-bot"
