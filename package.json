@@ -1,5 +1,6 @@
 {
   "name": "securify",
+  "homepage": "https://aadictive.github.io/securify",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
