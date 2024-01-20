@@ -49,7 +49,7 @@ jobs:
             path: ./build
         
         - name: Set current date and time as env variable
-          run: echo "TIMESTAMP=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV    
+          run: echo "TIMESTAMP=$(TZ=":US/Eastern" date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV    
     
         - name: Push
           uses: s0/git-publish-subdir-action@develop
