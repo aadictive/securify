@@ -42,5 +42,11 @@ jobs:
     if: github.ref == 'refs/heads/master'
     
     steps:
-    - name: Install NPM packages
-      run: npm run deploy
+        - name: Download artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: production-files
+            path: ./build
+    
+        - name: Push Build to gh-pages
+          run: gh-pages -d build
