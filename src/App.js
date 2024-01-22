@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import logo from './logo.svg';
 import './style.css';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, updateLoad] = useState(true);
